@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="pa-0">
     <h1 class="mb-2">Booking</h1>
-    <h3>Want to schedule a show? &nbsp;Reach out to our team</h3>
+    <h3>Want to schedule a show? &nbsp;<br v-if="$vuetify.breakpoint.xsOnly">Reach out to our team</h3>
     <v-layout justify-center>
       <div style="max-width: 300px;">
         <v-layout justify-start align-center class="mt-4">
@@ -20,9 +20,9 @@
             x-large
             icon
             href="tel:1-801-717-9043"
-            class="mr-3"
+            class="mr-2 ms-1"
           >
-            <v-icon large>mdi-phone</v-icon>
+            <v-icon large>mdi-cellphone-message</v-icon>
           </v-btn>
           (801) 717-9043
         </v-layout>

@@ -27,8 +27,8 @@
         </v-layout>
       </v-col>
     </v-row>
-    <h3 class="mb-2">We want to hear from you!</h3>
-    <h3 class="font-weight-bold">Like, Follow, Comment</h3>
+    <h3 class="font-weight-bold mb-2">Like, Follow, Comment</h3>
+    <h3>We want to hear from you!</h3>
   </v-container>
 </template>
 
