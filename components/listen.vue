@@ -17,6 +17,7 @@
             height="100%"
             :style="`padding: 8px; border-radius:${service.name.includes('Spotify') ? '40' : '12'}px`"
             elevation="6"
+            :href="service.url"
           >
             <img
               :src="service.src"
