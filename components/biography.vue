@@ -22,7 +22,8 @@
           lg="3"
           md="3"
           sm="3"
-          class="px-8"
+          style="padding: 0 70px 0 70px"
+          class="mt-10"
         >
           <v-layout class="title" justify-center>
             {{ person.name }}

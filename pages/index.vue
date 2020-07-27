@@ -6,6 +6,7 @@
     <v-app-bar
       fixed
       app
+      hide-on-scroll
     >
       <v-img
         max-width="40"
@@ -17,12 +18,9 @@
       <v-spacer />
     </v-app-bar>
     <carousel id="carousel" />
-    <v-row justify="center" no-gutters>
-      <v-card class="mt-12" width="70%">
-        <listen />
-      </v-card>
-    </v-row>
-    <biography id="biography" class="mt-12 mx-8" />
+    <social class="mt-12" />
+    <listen class="mt-12" />
+    <biography id="biography" class="mt-12" />
   </v-container>
 </template>
 
@@ -30,9 +28,11 @@
     import carousel from "../components/carousel";
     import Biography from "../components/biography";
     import Listen from "../components/listen";
+    import Social from "../components/social";
     export default {
         name: "Home",
         components: {
+          Social,
           Listen,
           Biography,
           carousel
@@ -53,5 +53,11 @@
     text-transform: uppercase;
     text-align: center;
     font-size: 20px;
+  }
+  h3 {
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: normal;
   }
 </style>

@@ -1,7 +1,8 @@
 <template>
   <v-container fluid>
-    <h1>Coming Soon...</h1>
-    <v-row>
+    <h1 class="mb-2">Coming Soon...</h1>
+    <h3>Keep an eye on our social media for the latest updates</h3>
+    <v-row class="mt-4">
       <v-col
         v-for="service in services"
         :key="service.name"
@@ -15,7 +16,7 @@
             color="black"
             width="216"
             height="100%"
-            :style="`padding: 8px; border-radius:${service.name.includes('Spotify') ? '40' : '12'}px`"
+            :style="`padding: 8px; border-radius:${service.radius}`"
             elevation="6"
             :href="service.url"
           >
@@ -40,20 +41,17 @@ export default {
         {
           src: require('static/logos/apple_music/Apple_Music_Badge_RGB.svg'),
           url: 'https://www.apple.com/apple-music/',
-          name: 'Apple Music',
-          radius: '10px'
+          radius: '12px'
         },
         {
           src: require('static/logos/spotify/Spotify_Logo_RGB_Green.png'),
           url: 'https://www.spotify.com/us/',
-          name: 'Spotify',
-          radius: '28px'
+          radius: '40px'
         },
         {
           src: require('static/logos/google_play/google-play-badge.png'),
           url: 'https://play.google.com/music/listen#/home',
-          name: 'Google Play',
-          radius: '10px'
+          radius: '12px'
         }
       ],
     }
