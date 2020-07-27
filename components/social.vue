@@ -2,14 +2,11 @@
   <v-container fluid>
     <h1 class="mb-2">Follow</h1>
     <h3>Keep up with the latest <b>news</b> and <b>upcoming shows</b></h3>
-    <v-row class="my-3">
+    <v-row class="my-4">
       <v-col
         v-for="service in services"
         :key="service.name"
-        cols="12"
-        lg="4"
-        md="4"
-        sm="4"
+        cols="4"
       >
         <v-layout justify-center>
           <v-btn
@@ -30,9 +27,8 @@
         </v-layout>
       </v-col>
     </v-row>
-    <v-layout justify-center align-center>
-      <h3>We want to hear from you! &nbsp; Like, Follow, and Comment</h3>&nbsp; &nbsp; &#128513;
-    </v-layout>
+    <h3 class="mb-2">We want to hear from you!</h3>
+    <h3 class="font-weight-bold">Like, Follow, Comment</h3>
   </v-container>
 </template>
 

@@ -21,20 +21,20 @@
 
     <!-- Main Content -->
     <carousel id="home" />
-    <v-container id="social">
+    <v-container id="social" class="mt-10">
       <social />
     </v-container>
-    <v-container id="contact">
+    <v-container id="contact" class="mt-10">
       <v-layout justify-center>
         <v-card class="pa-4" width="100%">
           <contact />
         </v-card>
       </v-layout>
     </v-container>
-    <v-container id="listen">
+    <v-container id="listen" class="mt-10">
       <listen />
     </v-container>
-    <v-container id="biography">
+    <v-container id="biography" class="mt-10">
       <v-layout justify-center>
         <v-card class="py-4 px-8" width="100%">
           <biography />
