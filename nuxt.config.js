@@ -1,11 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
 
-const routerBase = process.env.DEPLOY_ENV === 'STATIC_WEBSITE' ? {
-  router: {
-    base: '/broken-accord/'
-  }
-} : {}
-
 export default {
   mode: 'spa',
   /*
@@ -42,10 +36,6 @@ export default {
   buildModules: [
     '@nuxtjs/vuetify',
   ],
-  /*
-  ** Router for GH_PAGES
-  */
-  ...routerBase,
   /*
   ** Nuxt.js modules
   */

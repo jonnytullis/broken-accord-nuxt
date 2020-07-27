@@ -9,7 +9,6 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt build && nuxt generate",
-    "generate:static": "DEPLOY_ENV=STATIC_WEBSITE nuxt build",
     "deploy:static": "push-dir --dir=dist --branch=static_website --cleanup"
   },
   "dependencies": {
