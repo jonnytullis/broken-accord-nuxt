@@ -1,4 +1,4 @@
-# broken-accord-nuxt
+# broken-accord
 
 > Broken Accord Official Website
 
