@@ -6,7 +6,6 @@
     <v-app-bar
       fixed
       app
-      hide-on-scroll
     >
       <v-img
         id="bandLogo"
