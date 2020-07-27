@@ -1,6 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 
-const routerBase = process.env.DEPLOY_ENV === 'STATIC' ? {
+const routerBase = process.env.DEPLOY_ENV === 'STATIC_WEBSITE' ? {
   router: {
     base: '/broken-accord/'
   }
