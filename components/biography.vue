@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-spacer/>
+    <v-spacer />
     <v-col cols="10">
       <h1> The Band </h1>
       <br>
@@ -12,7 +12,7 @@
       </p>
       <p>
         By examining their roots and seeking inspiration from various artists, Broken Accord strives to share a one
-        of a kind music experience with the world.  The group’s first single, Rebel Blood, will release in early 2020,
+        of a kind music experience with the world.  The group’s first single, Rebel Blood, will release in late 2020,
         as the group vigorously works to add more material to their set list.
       </p>
       <v-row>
@@ -22,8 +22,8 @@
           lg="3"
           md="3"
           sm="3"
-          style="padding: 0 70px 0 70px"
-          class="mt-10"
+          :style="`padding:${$vuetify.breakpoint.xsOnly ? '0 70px 0 70px' : '0 40px 0 40px'}`"
+          class="my-5"
         >
           <v-layout class="title" justify-center>
             {{ person.name }}

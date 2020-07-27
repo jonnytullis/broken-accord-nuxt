@@ -1,7 +1,7 @@
 <template>
   <v-container
     fluid
-    class="px-0 pt-0 pb-8"
+    class="pa-0"
   >
     <v-app-bar
       fixed
@@ -9,18 +9,58 @@
       hide-on-scroll
     >
       <v-img
+        id="bandLogo"
         max-width="40"
         style="filter: invert(100%);"
         :src="require('static/logos/_broken_accord/logo-dark-vector.png')"
+        @click="$vuetify.goTo('#home', { offset: 50 })"
       />
       <v-spacer />
       <v-toolbar-title v-text="'BROKEN / ACCORD'" class="font-weight-bold heading" style="margin-left: -35px" />
       <v-spacer />
     </v-app-bar>
-    <carousel id="carousel" />
-    <social class="mt-12" />
-    <listen class="mt-12" />
-    <biography id="biography" class="mt-12" />
+
+    <!-- Main Content -->
+    <carousel id="home" />
+    <v-container id="social">
+      <social />
+    </v-container>
+    <v-container id="contact">
+      <v-layout justify-center>
+        <v-card class="pa-4" width="100%">
+          <contact />
+        </v-card>
+      </v-layout>
+    </v-container>
+    <v-container id="listen">
+      <listen />
+    </v-container>
+    <v-container id="biography">
+      <v-layout justify-center>
+        <v-card class="pa-4" width="100%">
+          <biography />
+        </v-card>
+      </v-layout>
+    </v-container>
+
+    <!-- Footer -->
+    <v-footer height="60">
+      <v-spacer />
+      <v-card
+        width="100"
+        color="transparent"
+        flat
+        @click="$vuetify.goTo('#home', { offset: 50 })"
+      >
+        <v-layout justify-center>
+          <v-icon>mdi-chevron-up</v-icon>
+        </v-layout>
+        <v-layout justify-center>
+          Back to top
+        </v-layout>
+      </v-card>
+      <v-spacer />
+    </v-footer>
   </v-container>
 </template>
 
@@ -29,9 +69,11 @@
     import Biography from "../components/biography";
     import Listen from "../components/listen";
     import Social from "../components/social";
+    import Contact from "../components/contact";
     export default {
         name: "Home",
         components: {
+          Contact,
           Social,
           Listen,
           Biography,
@@ -56,8 +98,11 @@
   }
   h3 {
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     font-style: italic;
     font-weight: normal;
+  }
+  #bandLogo:hover {
+    cursor: pointer;
   }
 </style>

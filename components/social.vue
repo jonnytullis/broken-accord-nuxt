@@ -1,11 +1,8 @@
 <template>
   <v-container fluid>
     <h1 class="mb-2">Follow</h1>
-    <v-layout justify-center>
-      <h3>We love our fans! &nbsp;We want to hear from you</h3>&nbsp; &#128513;
-    </v-layout>
-    <h3>Like, Follow, and Comment</h3>
-    <v-row class="mt-4">
+    <h3>Keep up with the latest <b>news</b> and <b>upcoming shows</b></h3>
+    <v-row class="my-3">
       <v-col
         v-for="service in services"
         :key="service.name"
@@ -33,6 +30,9 @@
         </v-layout>
       </v-col>
     </v-row>
+    <v-layout justify-center align-center>
+      <h3>We want to hear from you! &nbsp; Like, Follow, and Comment</h3>&nbsp; &nbsp; &#128513;
+    </v-layout>
   </v-container>
 </template>
 
