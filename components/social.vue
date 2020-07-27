@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <h1 class="mb-2">Follow</h1>
-    <h3>Keep up with the latest <b>news</b> and <b>upcoming shows</b></h3>
+    <h3>Keep up with the latest news and upcoming shows</h3>
     <v-row class="my-4">
       <v-col
         v-for="service in services"
