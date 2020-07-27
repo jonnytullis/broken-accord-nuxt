@@ -10,7 +10,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "generate:static": "DEPLOY_ENV=STATIC nuxt build && nuxt export",
-    "deploy:static": "push-dir --dir=dist --branch=static --cleanup"
+    "deploy:static": "push-dir --dir=dist --branch=static_website --cleanup"
   },
   "dependencies": {
     "nuxt": "^2.0.0"
