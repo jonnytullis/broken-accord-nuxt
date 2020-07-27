@@ -17,10 +17,12 @@
       <v-spacer />
     </v-app-bar>
     <carousel id="carousel" />
+    <v-row justify="center" no-gutters>
+      <v-card class="mt-12" width="70%">
+        <listen />
+      </v-card>
+    </v-row>
     <biography id="biography" class="mt-12 mx-8" />
-    <v-card class="mt-12 mx-8">
-      <listen />
-    </v-card>
   </v-container>
 </template>
 
