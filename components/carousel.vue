@@ -1,9 +1,10 @@
 <template>
   <v-carousel
-    cycle
     show-arrows-on-hover
     hide-delimiter-background
-    height="auto"
+    continuous
+    cycle
+    :height="height"
   >
     <v-carousel-item
       v-for="(image,i) in images"
@@ -30,6 +31,11 @@ export default {
           src: require('static/images/band/band-02.jpg')
         }
       ],
+    }
+  },
+  computed: {
+    height: function () {
+      return window.innerWidth / 2
     }
   }
 }

@@ -44,7 +44,7 @@
     </v-container>
 
     <!-- Footer -->
-    <v-footer height="60">
+    <v-footer height="60" class="mt-4">
       <v-spacer />
       <v-card
         width="100"
