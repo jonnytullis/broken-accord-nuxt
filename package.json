@@ -8,7 +8,9 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "generate:static": "DEPLOY_ENV=STATIC nuxt build && nuxt export",
+    "deploy:static": "push-dir --dir=dist --branch=static --cleanup"
   },
   "dependencies": {
     "nuxt": "^2.0.0"
