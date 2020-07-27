@@ -36,7 +36,7 @@
     </v-container>
     <v-container id="biography">
       <v-layout justify-center>
-        <v-card class="pa-4" width="100%">
+        <v-card class="py-4 px-8" width="100%">
           <biography />
         </v-card>
       </v-layout>
