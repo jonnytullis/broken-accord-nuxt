@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container>
     <h1 class="mb-2">Coming Soon...</h1>
     <h3>Keep an eye on our social media for the latest release updates</h3>
     <v-row class="mt-4">
@@ -34,7 +34,7 @@
 
 <script>
 export default {
-    name: "listen",
+  name: "listen",
   data() {
     return {
       services: [

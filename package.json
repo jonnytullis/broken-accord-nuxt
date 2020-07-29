@@ -12,10 +12,11 @@
     "deploy:static-website": "push-dir --dir=dist --branch=static-website --cleanup"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-click-outside": "^1.1.0"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.0.0",
+    "@nuxtjs/vuetify": "^1.x.x",
     "static": "^2.0.0"
   }
 }

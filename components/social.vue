@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container>
     <h1 class="mb-2">Follow</h1>
     <h3>Keep up with the latest news and upcoming shows</h3>
     <v-row class="my-4">

@@ -21,26 +21,11 @@
 
     <!-- Main Content -->
     <carousel id="home" />
-    <v-container id="social" class="mt-10">
-      <social />
-    </v-container>
-    <v-container id="contact" class="mt-10">
-      <v-layout justify-center>
-        <v-card class="pa-4" width="100%">
-          <contact />
-        </v-card>
-      </v-layout>
-    </v-container>
-    <v-container id="listen" class="mt-10">
-      <listen />
-    </v-container>
-    <v-container id="biography" class="mt-10">
-      <v-layout justify-center>
-        <v-card class="py-4 px-8" width="100%">
-          <biography />
-        </v-card>
-      </v-layout>
-    </v-container>
+    <song-demo id="demo" class="mt-10" />
+    <listen id="listen" class="mt-10" />
+    <contact id="contact" class="mt-10" />
+    <social id="social" class="mt-10" />
+    <biography id="biography" class="mt-10" />
 
     <!-- Footer -->
     <v-footer height="60" class="mt-4">
@@ -69,9 +54,11 @@
     import Listen from "../components/listen";
     import Social from "../components/social";
     import Contact from "../components/contact";
+    import SongDemo from '../components/song-demo'
     export default {
         name: "Home",
         components: {
+          SongDemo,
           Contact,
           Social,
           Listen,
