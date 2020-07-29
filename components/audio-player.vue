@@ -9,7 +9,7 @@
       </slot>
     </div>
     <v-expand-transition>
-      <v-layout v-if="showPlayer" justify-center class="fixedBottom" v-click-outside="stop">
+      <v-layout v-if="showPlayer" justify-center class="fixedBottom">
         <v-card tile :width="$vuetify.breakpoint.xsOnly ? '100%' : '60%'" color="black">
           <v-layout class="mx-4 mt-4 mb-n3">
             {{ currentTime | time }}
@@ -41,6 +41,11 @@
                   <v-icon>mdi-play</v-icon>
                 </v-btn>
               </v-list-item-icon>
+              <v-list-item-icon>
+                <v-icon class="mt-4" @click="stop">
+                  mdi-close
+                </v-icon>
+              </v-list-item-icon>
             </v-list-item>
           </v-list>
         </v-card>
@@ -50,7 +55,6 @@
 </template>
 
 <script>
-import ClickOutside from 'vue-click-outside'
 
 export default {
   name: "audio-player",
@@ -124,9 +128,6 @@ export default {
       let secondsRemaining = Math.floor(_seconds % 60)
       return `${numMinutes}:${('0' + secondsRemaining).slice(-2)}`
     }
-  },
-  directives: {
-    ClickOutside
   }
 }
 </script>
