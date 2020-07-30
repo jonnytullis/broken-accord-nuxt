@@ -7,20 +7,24 @@
         type="email"
         dense
         outlined
+        :error-messages="inputError"
         color="light"
-      />
+      >
+        <template #append>
+          <v-progress-circular v-if="loading" indeterminate size="24" width="3" />
+        </template>
+      </v-text-field>
     </v-form>
     <v-btn @click="submit">Submit</v-btn>
 
     <!-- Error Snackbar -->
     <v-snackbar
-      v-model="showError"
-      color="red darken-2"
-      timeout="7000"
+      v-model="snackbar"
+      :color="snackbarColor"
+      :timeout="snackbarTimeout"
     >
-      <div style="font-size: 16px;">
-        We encountered an error while saving your email address. Please try again later.
-      </div>
+      <div style="font-size: 22px; font-weight: bold; margin-bottom: 5px;">{{ snackbarTitle}}</div>
+      <div style="font-size: 16px;">{{ snackbarText }}</div>
     </v-snackbar>
   </v-container>
 </template>
@@ -35,11 +39,22 @@ export default {
       input: '',
       loading: false,
       numSubmissionAttempts: 0,
-      showError: false
+      snackbar: false,
+      snackbarColor: '',
+      snackbarText: '',
+      snackbarTitle: '',
+      snackbarTimeout: 0,
+      inputError: ''
     }
   },
   methods: {
     async submit() {
+      if (!this.isValidEmail(this.input)) {
+        this.inputError = 'Invalid Email'
+        return
+      }
+      this.loading = true
+      this.inputError = ''
       let inputString = this.input.replace('@', '%40')
       let formData = `emailAddress=${inputString}&fvv=1&draftResponse=%5Bnull%2Cnull%2C%22644132868472797057%22%5D%0D%0A&pageHistory=0&fbzx=6449132868472797057`
 
@@ -53,10 +68,34 @@ export default {
           if (this.numSubmissionAttempts < 2) {
             await this.submit()
           } else {
-            this.showError = true
+            this.showError()
+            this.snackbar = true
           }
+        } else {
+          this.showSuccess()
+          this.input = ''
         }
+      } finally {
+        this.loading = false
       }
+    },
+    isValidEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    },
+    showError() {
+      this.snackbarColor = 'error'
+      this.snackbarTitle = 'Error'
+      this.snackbarText = 'We encountered an error while saving your email address. Please try again later.'
+      this.snackbarTimeout = 7000
+      this.snackbar = true
+    },
+    showSuccess() {
+      this.snackbarColor = 'success'
+      this.snackbarTitle = 'Thank You'
+      this.snackbarText = 'We love our fans!'
+      this.snackbarTimeout = 3000
+      this.snackbar = true
     }
   }
 }
