@@ -20,10 +20,10 @@
               height="3"
               hide-details
               class="mx-4 mt-3"
-              style="z-index: 101;"
+              style="z-index: 11"
               @start="freezeSliderUpdate = true"
               @end="freezeSliderUpdate = false"
-              @change="(val) => { updateTime(val); }"
+              @change="updateTime"
             />
             {{ audio.duration | time }}
           </v-layout>
@@ -142,6 +142,6 @@ export default {
   bottom:0;
   left:0;
   width: 100%;
-  z-index:100;
+  z-index: 10;
 }
 </style>
