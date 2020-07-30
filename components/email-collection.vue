@@ -11,6 +11,17 @@
       />
     </v-form>
     <v-btn @click="submit">Submit</v-btn>
+
+    <!-- Error Snackbar -->
+    <v-snackbar
+      v-model="showError"
+      color="red darken-2"
+      timeout="7000"
+    >
+      <div style="font-size: 16px;">
+        We encountered an error while saving your email address. Please try again later.
+      </div>
+    </v-snackbar>
   </v-container>
 </template>
 
@@ -22,7 +33,9 @@ export default {
   data: () => {
     return {
       input: '',
-      loading: false
+      loading: false,
+      numSubmissionAttempts: 0,
+      showError: false
     }
   },
   methods: {
@@ -36,10 +49,17 @@ export default {
 
       const url = 'https://docs.google.com/forms/d/e/1FAIpQLScsS8pIj--rAM9LqHSOUFkBsXX7evV69-P90cfn-YB4iK2fMw/formResponse'
       try {
+        this.numSubmissionAttempts++
         const response = await axios.post(url, formData)
-        console.log('SUCCESS')
       } catch(e) {
-        console.log('ERROR:', e.toString())
+        if (e.response) {
+          // It's an actual error, not just CORS
+          if (this.numSubmissionAttempts < 2) {
+            await this.submit()
+          } else {
+            this.showError = true
+          }
+        }
       }
     }
   }
