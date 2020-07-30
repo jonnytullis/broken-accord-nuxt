@@ -16,7 +16,7 @@
             <v-slider
               v-model="sliderTime"
               :max="audio.duration"
-              :step="stepSizeSec"
+              step="0"
               height="3"
               hide-details
               class="mx-4 mt-3"
@@ -35,7 +35,7 @@
               </v-list-item-content>
 
               <v-list-item-icon class="mx-5">
-                <v-btn v-if="!audioPaused" icon x-large @click="pause">
+                <v-btn v-if="!isPaused" icon x-large @click="pause">
                   <v-icon>mdi-pause</v-icon>
                 </v-btn>
                 <v-btn v-else icon x-large @click="play">
@@ -77,7 +77,7 @@ export default {
     return {
       audio: null,
       showPlayer: false,
-      audioPaused: false,
+      isPaused: false,
       sliderTime: 0,
       stepSizeSec: 0.05,
       sliderUpdateInterval: '',
@@ -86,24 +86,29 @@ export default {
   },
   mounted() {
     this.audio = new Audio(this.src)
+    this.audio.addEventListener('ended', this.handleEnded)
   },
   methods: {
+    handleEnded() {
+      if (!this.freezeSliderUpdate) {
+        this.stop()
+        this.clearSliderInterval()
+      } else {
+        this.isPaused = true
+      }
+    },
     play() {
       setTimeout(() => {
         this.showPlayer = true
       }, 50)
       this.audio.play()
       this.setSliderInterval()
-      this.audioPaused = false
+      this.isPaused = false
     },
     setSliderInterval() {
       this.sliderUpdateInterval = setInterval(() => {
         if (!this.freezeSliderUpdate) {
           this.sliderTime = this.audio.currentTime
-        }
-        if (this.sliderTime >= this.audio.duration) {
-          this.stop()
-          this.clearSliderInterval()
         }
       }, this.stepSizeSec * 1000)
     },
@@ -113,7 +118,7 @@ export default {
     pause() {
       this.audio.pause()
       this.clearSliderInterval()
-      this.audioPaused = true
+      this.isPaused = true
     },
     stop() {
       this.showPlayer = false
@@ -123,6 +128,9 @@ export default {
     },
     updateTime(seconds) {
       this.audio.currentTime = seconds
+    },
+    forceUpdate() {
+      this.$forceUpdate()
     }
   },
   filters: {

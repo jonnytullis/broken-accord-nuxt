@@ -2,6 +2,7 @@
   <v-container>
     <v-form @submit.prevent="submit">
       <v-text-field
+        ref="textField"
         v-model="input"
         label="Email"
         type="email"
@@ -74,6 +75,9 @@ export default {
         } else {
           this.showSuccess()
           this.input = ''
+          if (this.$refs.textField) {
+            console.log(this.$refs.textField)
+          }
         }
       } finally {
         this.loading = false
