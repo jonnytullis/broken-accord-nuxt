@@ -12,17 +12,18 @@
       <v-layout v-if="showPlayer" justify-center class="fixedBottom">
         <v-card tile :width="$vuetify.breakpoint.xsOnly ? '100%' : '60%'" color="black">
           <v-layout class="mx-4 mt-4 mb-n3">
-            {{ currentTime | time }}
+            {{ sliderTime | time }}
             <v-slider
-              :value="currentTime"
+              v-model="sliderTime"
               :max="audio.duration"
               :step="stepSizeSec"
               height="3"
               hide-details
               class="mx-4 mt-3"
               style="z-index: 101;"
-              @mousedown="pause"
-              @change="(val) => { updateTime(val); play() }"
+              @start="freezeSliderUpdate = true"
+              @end="freezeSliderUpdate = false"
+              @change="(val) => { updateTime(val); }"
             />
             {{ audio.duration | time }}
           </v-layout>
@@ -77,9 +78,10 @@ export default {
       audio: null,
       showPlayer: false,
       audioPaused: false,
-      currentTime: 0,
+      sliderTime: 0,
       stepSizeSec: 0.05,
-      sliderInterval: ''
+      sliderUpdateInterval: '',
+      freezeSliderUpdate: false
     }
   },
   mounted() {
@@ -95,27 +97,29 @@ export default {
       this.audioPaused = false
     },
     setSliderInterval() {
-      this.sliderInterval = setInterval(() => {
-        this.currentTime = this.audio.currentTime
-        if (this.currentTime >= this.audio.duration) {
+      this.sliderUpdateInterval = setInterval(() => {
+        if (!this.freezeSliderUpdate) {
+          this.sliderTime = this.audio.currentTime
+        }
+        if (this.sliderTime >= this.audio.duration) {
           this.stop()
           this.clearSliderInterval()
         }
       }, this.stepSizeSec * 1000)
     },
     clearSliderInterval() {
-      clearInterval(this.sliderInterval)
+      clearInterval(this.sliderUpdateInterval)
     },
     pause() {
       this.audio.pause()
       this.clearSliderInterval()
       this.audioPaused = true
     },
-    stop(event) {
-      console.log('REACHED', event)
+    stop() {
       this.showPlayer = false
       this.pause()
       this.audio.currentTime = 0
+      this.sliderTime = 0
     },
     updateTime(seconds) {
       this.audio.currentTime = seconds
