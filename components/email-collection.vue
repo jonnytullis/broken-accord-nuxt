@@ -5,7 +5,6 @@
         ref="textField"
         v-model="input"
         label="Email"
-        autofocus
         dense
         outlined
         :error-messages="inputError"
