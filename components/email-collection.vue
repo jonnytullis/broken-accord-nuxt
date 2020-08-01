@@ -6,6 +6,7 @@
         v-model="input"
         label="Email"
         type="email"
+        autofocus
         dense
         outlined
         :error-messages="inputError"
