@@ -4,7 +4,7 @@
       <v-text-field
         ref="textField"
         v-model="input"
-        placeholder="Email"
+        label="Email"
         autofocus
         dense
         outlined
