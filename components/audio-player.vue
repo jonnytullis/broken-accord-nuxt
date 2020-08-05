@@ -2,10 +2,25 @@
   <v-container>
     <div class="text-center mb-4">
       <slot name="activator">
-        <v-btn color="primary" :disabled="showPlayer" @click="play">
-          <v-icon class="mr-2">mdi-play</v-icon>
-          Play Sample
-        </v-btn>
+        <v-row :justify="justify">
+          <div style="width: fit-content; height: fit-content;" @click="play">
+            <v-btn
+              :disabled="showPlayer"
+              color="primary"
+              icon
+              x-large
+              class="pa-9 mb-n1"
+            >
+              <v-icon size="70">mdi-play-circle-outline</v-icon>
+            </v-btn>
+          </div>
+        </v-row>
+        <span
+          :style="`color:${$vuetify.theme.themes.dark.primary}`"
+          class="overline"
+        >
+          Play Now
+        </span>
       </slot>
     </div>
     <v-expand-transition>
@@ -71,6 +86,10 @@ export default {
     subtitle: {
       type: String,
       default: ''
+    },
+    justify: {
+      type: String,
+      default: 'center'
     }
   },
   data: () => {
@@ -128,9 +147,6 @@ export default {
     },
     updateTime(seconds) {
       this.audio.currentTime = seconds
-    },
-    forceUpdate() {
-      this.$forceUpdate()
     }
   },
   filters: {

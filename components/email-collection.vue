@@ -23,7 +23,7 @@
     <v-snackbar
       v-model="snackbar"
       :color="snackbarColor"
-      :timeout="snackbarTimeout"
+      :timeout="snackbarTimeout || -1"
     >
       <div style="font-size: 22px; font-weight: bold; margin-bottom: 5px;">{{ snackbarTitle}}</div>
       <div style="font-size: 16px;">{{ snackbarText }}</div>

@@ -6,14 +6,14 @@
         <br>
         <p :style="$vuetify.breakpoint.xsOnly ? 'text-align: center;' : ''">
           Broken Accord is an Indie Rock band from Provo, UT, consisting of Taylor Purcell, Jonny Tullis, James Hanks,
-          and Nate Beck.  Previously involved in a Punk Rock band in 2013, these long time friends reunited in their
+          and Nate Beck.  Previously formed as a Punk Rock band in 2013, these long time friends reunited in their
           latest project, Broken Accord.  The distinct passion of each member fuels their collective drive to create music
           that will empower their listeners.
         </p>
         <p :style="$vuetify.breakpoint.xsOnly ? 'text-align: center;' : ''">
-          By examining their roots and seeking inspiration from various artists, Broken Accord strives to share a one
-          of a kind music experience with the world.  The group’s first single, Rebel Blood, will release in late 2020,
-          as the group vigorously works to add more material to their set list.
+          Broken Accord strives to share a one of a kind music experience with
+          the world.  The group’s first single, Rebel Blood, will release in late 2020
+          and they are vigorously working to add more material to their set list.
         </p>
         <v-row>
           <v-col
@@ -21,7 +21,7 @@
             cols="12"
             lg="3"
             md="3"
-            sm="3"
+            sm="6"
             :style="`padding:${$vuetify.breakpoint.xsOnly ? '0 70px 0 70px' : '0 40px 0 40px'}`"
             class="my-5"
           >
