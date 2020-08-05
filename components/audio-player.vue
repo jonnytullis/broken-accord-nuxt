@@ -9,7 +9,7 @@
               color="primary"
               icon
               x-large
-              class="pa-9 mb-n1"
+              class="my-1"
             >
               <v-icon size="70">mdi-play-circle-outline</v-icon>
             </v-btn>
