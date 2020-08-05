@@ -5,6 +5,8 @@
         ref="textField"
         v-model="input"
         label="Email"
+        type="email"
+        :autofocus="$vuetify.breakpoint.smAndDown"
         dense
         outlined
         :error-messages="inputError"

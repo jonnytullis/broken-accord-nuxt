@@ -9,7 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt build && nuxt generate",
-    "deploy:static-website": "push-dir --dir=dist --branch=static-website --cleanup"
+    "deploy": "scp -r -i ~/.ssh/byu_domains dist/* jtullisc@brokenaccord.com:~/public_html"
   },
   "dependencies": {
     "axios": "^0.19.2",
