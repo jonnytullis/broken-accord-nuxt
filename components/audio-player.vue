@@ -1,27 +1,22 @@
 <template>
   <v-container>
     <div class="text-center mb-4">
-      <slot name="activator">
-        <v-row :justify="justify">
-          <div style="width: fit-content; height: fit-content;" @click="play">
-            <v-btn
-              :disabled="showPlayer"
-              color="primary"
-              icon
-              x-large
-              class="my-1"
+      <v-row :justify="justify">
+        <v-card flat color="transparent" @click="play" :disabled="showPlayer">
+          <div class="px-2 pt-1">
+            <v-icon size="70" color="primary">
+              mdi-play-circle-outline
+            </v-icon>
+            <v-row
+              justify="center"
+              :style="`color:${$vuetify.theme.themes.dark.primary}`"
+              class="overline mt-n1"
             >
-              <v-icon size="70">mdi-play-circle-outline</v-icon>
-            </v-btn>
+              Play Now
+            </v-row>
           </div>
-        </v-row>
-        <span
-          :style="`color:${$vuetify.theme.themes.dark.primary}`"
-          class="overline"
-        >
-          Play Now
-        </span>
-      </slot>
+        </v-card>
+      </v-row>
     </div>
     <v-expand-transition>
       <v-layout v-if="showPlayer" justify-center class="fixedBottom">

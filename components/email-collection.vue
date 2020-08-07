@@ -52,6 +52,9 @@ export default {
     async submit() {
       if (!this.isValidEmail(this.input)) {
         this.inputError = 'Invalid Email'
+        setTimeout(() => {
+          this.inputError = ''
+        }, 2500)
         return
       }
       this.loading = true
