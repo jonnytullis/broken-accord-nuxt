@@ -62,7 +62,7 @@ export default {
       const url = 'https://docs.google.com/forms/d/e/1FAIpQLScsS8pIj--rAM9LqHSOUFkBsXX7evV69-P90cfn-YB4iK2fMw/formResponse'
       try {
         this.numSubmissionAttempts++
-        const response = await axios.post(url, formData)
+        await axios.post(url, formData)
       } catch(e) {
         if (e.response) {
           // It's an actual error, not just CORS
@@ -97,8 +97,8 @@ export default {
     showSuccess() {
       this.snackbarColor = 'success'
       this.snackbarTitle = 'Thank You'
-      this.snackbarText = 'We love our fans!'
-      this.snackbarTimeout = 3000
+      this.snackbarText = `Submitted '${this.input}'`
+      this.snackbarTimeout = 4000
       this.snackbar = true
     }
   }
