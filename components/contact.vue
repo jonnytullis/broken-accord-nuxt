@@ -52,7 +52,7 @@ export default {
   name: "contact",
   data: () => {
     return {
-      defaultMessage: "Hi there, I'd like to learn more about booking your band for a show.",
+      defaultMessage: "Hi, I'd like to learn more about booking your band for a show.",
       defaultSubject: "Send me information"
     }
   }

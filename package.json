@@ -13,9 +13,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "google-spreadsheet": "^3.0.11",
     "nuxt": "^2.0.0",
-    "vue-google-api": "^0.2.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.x.x",
