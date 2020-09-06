@@ -1,6 +1,8 @@
 # broken-accord
 
-> Broken Accord Official Website
+This is a website I built for my band. It features a custom made audio player and a workaround for sending Google Form input.
+
+https://brokenaccord.com/
 
 ## Build Setup
 
