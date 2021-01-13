@@ -9,7 +9,7 @@
     >
       <v-img
         id="bandLogo"
-        max-width="40"
+        max-width="45"
         style="filter: invert(100%);"
         :src="require('static/logos/_broken_accord/logo-dark-vector.png')"
         @click="$vuetify.goTo('#home', { offset: 50 })"
