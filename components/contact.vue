@@ -4,7 +4,7 @@
       <v-card class="pa-4" width="100%">
         <h1 class="mb-2">Booking</h1>
         <h3>Interested in learning more? &nbsp;<br v-if="$vuetify.breakpoint.xsOnly">Reach out to our team</h3>
-        <v-row justify="center">
+        <v-row justify="center" class="mt-3">
           <v-list rounded :width="$vuetify.breakpoint.smAndDown ? '100%' : '50%'">
             <v-list-item href="tel:1-801-717-9043">
               <v-list-item-icon>
