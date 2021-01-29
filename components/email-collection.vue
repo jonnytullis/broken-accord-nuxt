@@ -1,22 +1,24 @@
 <template>
   <v-container>
     <v-form @submit.prevent="submit">
-      <v-text-field
-        ref="textField"
-        v-model="input"
-        label="Email"
-        type="email"
-        dense
-        outlined
-        :error-messages="inputError"
-        color="light"
-      >
-        <template #append>
-          <v-progress-circular v-if="loading" indeterminate size="24" width="3" />
-        </template>
-      </v-text-field>
+      <v-row>
+        <v-text-field
+          ref="textField"
+          v-model="input"
+          label="Email"
+          type="email"
+          dense
+          outlined
+          :error-messages="inputError"
+          color="light"
+        >
+          <template #append>
+            <v-progress-circular v-if="loading" indeterminate size="24" width="3" />
+          </template>
+        </v-text-field>
+        <v-btn type="submit" class="ms-4 mt-1">Submit</v-btn>
+      </v-row>
     </v-form>
-    <v-btn @click="submit">Submit</v-btn>
 
     <!-- Error Snackbar -->
     <v-snackbar
@@ -81,9 +83,9 @@ export default {
     },
     showSuccess() {
       this.snackbarColor = 'success'
-      this.snackbarTitle = 'Thank You'
+      this.snackbarTitle = 'Thank You! You\'ll hear from us soon!'
       this.snackbarText = `Submitted '${this.input}'`
-      this.snackbarTimeout = 4000
+      this.snackbarTimeout = 5000
       this.snackbar = true
     }
   }

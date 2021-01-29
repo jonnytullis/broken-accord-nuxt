@@ -12,7 +12,7 @@
         </p>
         <p :style="$vuetify.breakpoint.xsOnly ? 'text-align: center;' : ''">
           Broken Accord strives to share a one of a kind music experience with
-          the world.  The group’s first single, Rebel Blood, will release in early 2021
+          the world.  The group’s first single, Rebel Blood, will release on January 30, 2021
           and they are vigorously working to add more material to their set list.
         </p>
         <v-row>

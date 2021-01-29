@@ -22,6 +22,9 @@ export default {
       images: [
         // IMPORTANT: Image width must be 2 times larger than the height
         {
+          src: require('static/images/albums/rebel-blood-full-width.png')
+        },
+        {
           src: require('static/logos/_broken_accord/logo-dark-gradient_full_width.png')
         },
         {
@@ -35,7 +38,9 @@ export default {
   },
   computed: {
     height: function () {
-      return window.innerWidth / 2
+      const maxHeight = window.innerHeight - 100
+      const height = window.innerWidth / 2
+      return Math.min(height, maxHeight)
     }
   }
 }
