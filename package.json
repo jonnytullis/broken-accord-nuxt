@@ -16,6 +16,7 @@
     "nuxt": "^2.14.3"
   },
   "devDependencies": {
+    "@nuxt/types": "^2.14.12",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/vuetify": "^1.x.x",
     "static": "^2.0.0"

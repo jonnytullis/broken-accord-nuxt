@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <h1 class="mb-2">Coming Soon...</h1>
-    <h3>Keep an eye on our social media for the latest release updates</h3>
+    <h1 class="mb-2">Listen</h1>
+    <h3>Music now available in stores and streaming services</h3>
     <v-row class="mt-4">
       <v-col
         v-for="service in services"
@@ -19,6 +19,7 @@
             :style="`padding: 8px; border-radius:${service.radius}`"
             elevation="6"
             :href="service.url"
+            target="_blank"
           >
             <img
               :src="service.src"
@@ -40,17 +41,17 @@ export default {
       services: [
         {
           src: require('static/logos/apple_music/Apple_Music_Badge_RGB.svg'),
-          url: 'https://www.apple.com/apple-music/',
+          url: 'https://beta.music.apple.com/us/album/rebel-blood/1550867694?i=1550867698',
           radius: '12px'
         },
         {
           src: require('static/logos/spotify/Spotify_Logo_RGB_Green.png'),
-          url: 'https://www.spotify.com/us/',
+          url: 'https://open.spotify.com/album/4pFnhU8oz6PIrk9jIa9zb1',
           radius: '40px'
         },
         {
-          src: require('static/logos/google_play/google-play-badge.png'),
-          url: 'https://play.google.com/music/listen#/home',
+          src: require('static/logos/youtube-music/youtube-music.png'),
+          url: 'https://music.youtube.com/watch?v=uO1Hw5KvXC8&list=RDAMVMuO1Hw5KvXC8',
           radius: '12px'
         }
       ],
