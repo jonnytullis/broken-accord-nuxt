@@ -1,7 +1,6 @@
 <template>
   <v-container>
     <h1 class="mb-2">Listen</h1>
-    <h3>Music now available in stores and streaming services</h3>
     <v-row class="mt-4">
       <v-col
         v-for="service in services"

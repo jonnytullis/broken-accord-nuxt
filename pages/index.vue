@@ -21,8 +21,11 @@
 
     <!-- Main Content -->
     <carousel id="home" />
-    <song-demo id="demo" class="mt-10" />
+<!--    <song-demo id="demo" class="mt-10" />-->
     <listen id="listen" class="mt-10" />
+    <v-row justify="center">
+      <email-collection class="mx-8" style="max-width: 600px" />
+    </v-row>
     <contact id="contact" class="mt-10" />
     <social id="social" class="mt-10" />
     <biography id="biography" class="mt-10" />
@@ -55,9 +58,11 @@
     import Social from "../components/social";
     import Contact from "../components/contact";
     import SongDemo from '../components/song-demo'
+    import EmailCollection from "~/components/email-collection";
     export default {
         name: "Home",
         components: {
+          EmailCollection,
           SongDemo,
           Contact,
           Social,

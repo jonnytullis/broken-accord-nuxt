@@ -1,6 +1,9 @@
 <template>
   <v-container>
     <v-form @submit.prevent="submit">
+      <v-row justify="center" class="my-4">
+        <h3>Get notified when new <br v-if="$vuetify.breakpoint.xsOnly" /> songs are released</h3>
+      </v-row>
       <v-row>
         <v-text-field
           ref="textField"
