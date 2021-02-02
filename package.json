@@ -2,7 +2,7 @@
   "name": "broken-accord",
   "version": "1.0.0",
   "description": "Broken Accord Official Website",
-  "author": "jonathantullis",
+  "author": "jonnytullis",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -13,12 +13,12 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "nuxt": "^2.14.3"
+    "nuxt": "^2.14.12"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.12",
     "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/vuetify": "^1.x.x",
+    "@nuxtjs/vuetify": "^1.11.3",
     "static": "^2.0.0"
   }
 }
