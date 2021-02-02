@@ -19,7 +19,7 @@
             <v-progress-circular v-if="loading" indeterminate size="24" width="3" />
           </template>
         </v-text-field>
-        <v-btn type="submit" class="ms-4 mt-1">Submit</v-btn>
+        <v-btn type="submit" color="primary" class="ms-4 mt-1">Submit</v-btn>
       </v-row>
     </v-form>
 

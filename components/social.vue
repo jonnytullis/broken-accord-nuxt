@@ -6,9 +6,13 @@
       <v-col
         v-for="service in services"
         :key="service.name"
-        cols="4"
+        cols="6"
+        sm="3"
+        md="3"
+        lg="3"
+        xl="3"
       >
-        <v-layout justify-center>
+        <v-row style="height: 100%;" align="center" justify="center">
           <v-btn
             color="transparent"
             height="80"
@@ -24,10 +28,10 @@
               :alt="service.name"
             />
           </v-btn>
-        </v-layout>
+        </v-row>
       </v-col>
     </v-row>
-    <h3 class="font-weight-bold mb-2">Like, Follow, Comment</h3>
+    <h3 class="font-weight-bold mb-2">Follow, Like, Comment</h3>
     <h3>We want to hear from you!</h3>
   </v-container>
 </template>
@@ -39,9 +43,16 @@
       return {
         services: [
           {
-            src: require('static/logos/facebook/f_logo_RGB-Blue_250.png'),
-            url: 'https://www.facebook.com/brokenaccord/?ref=aymt_homepage_panel&eid=ARBMBJkdmMPemC92kHRTYaJiGindIHqvQ-HEaaJhxbwy3ZVSJY-bm9Oml7UkyJkG_CzxZPBmm-Gluxr8',
+            src: require('static/logos/tiktok/tiktok.png'),
+            url: 'https://www.tiktok.com/@brokenaccord',
             radius: '50%',
+            width: '85',
+            height: '85'
+          },
+          {
+            src: require('static/logos/instagram/IG_Glyph_Fill.png'),
+            url: 'https://www.instagram.com/brokenaccord.band/',
+            radius: '22px',
             width: '80',
             height: '80'
           },
@@ -53,12 +64,12 @@
             height: '70'
           },
           {
-            src: require('static/logos/instagram/IG_Glyph_Fill.png'),
-            url: 'https://www.instagram.com/brokenaccord.band/',
-            radius: '22px',
+            src: require('static/logos/facebook/f_logo_RGB-Blue_250.png'),
+            url: 'https://www.facebook.com/brokenaccord/?ref=aymt_homepage_panel&eid=ARBMBJkdmMPemC92kHRTYaJiGindIHqvQ-HEaaJhxbwy3ZVSJY-bm9Oml7UkyJkG_CzxZPBmm-Gluxr8',
+            radius: '50%',
             width: '80',
             height: '80'
-          }
+          },
         ],
       }
     }

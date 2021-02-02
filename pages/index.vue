@@ -21,14 +21,17 @@
 
     <!-- Main Content -->
     <carousel id="home" />
-<!--    <song-demo id="demo" class="mt-10" />-->
-    <listen id="listen" class="mt-10" />
-    <v-row justify="center">
-      <email-collection class="mx-8" style="max-width: 600px" />
-    </v-row>
-    <contact id="contact" class="mt-10" />
-    <social id="social" class="mt-10" />
-    <biography id="biography" class="mt-10" />
+    <v-container>
+      <social id="social" class="mt-10" />
+      <v-card class="mt-10 pt-2">
+        <listen id="listen" />
+        <v-row justify="center">
+          <email-collection class="mx-8" style="max-width: 600px" />
+        </v-row>
+      </v-card>
+      <contact id="contact" class="mt-10" />
+      <biography id="biography" class="mt-10" />
+    </v-container>
 
     <!-- Footer -->
     <v-footer height="60" class="mt-4">

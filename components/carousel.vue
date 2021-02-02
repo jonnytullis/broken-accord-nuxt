@@ -38,7 +38,7 @@ export default {
   },
   computed: {
     height: function () {
-      const maxHeight = window.innerHeight - 100
+      const maxHeight = window.innerHeight - 200
       const height = window.innerWidth / 2
       return Math.min(height, maxHeight)
     }
