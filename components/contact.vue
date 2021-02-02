@@ -1,9 +1,9 @@
 <template>
-  <v-container>
+  <v-container style="max-width: 700px;">
     <h1 class="mb-2">Booking</h1>
     <h3>Interested in learning more? &nbsp;<br v-if="$vuetify.breakpoint.xsOnly">Reach out to our team</h3>
     <v-row justify="center" class="mt-3">
-      <v-list rounded :width="$vuetify.breakpoint.smAndDown ? '100%' : '50%'">
+      <v-list color="transparent" rounded :width="$vuetify.breakpoint.smAndDown ? '100%' : '50%'">
         <v-list-item href="tel:1-801-717-9043">
           <v-list-item-icon>
             <v-icon large>mdi-phone</v-icon>
@@ -21,7 +21,7 @@
           </v-list-item-title>
         </v-list-item>
       </v-list>
-      <v-list rounded :width="$vuetify.breakpoint.smAndDown ? '100%' : '50%'">
+      <v-list color="transparent" rounded :width="$vuetify.breakpoint.smAndDown ? '100%' : '50%'">
         <v-list-item :href="`mailto: brokenaccordband@gmail.com?subject=${defaultSubject}&body=${defaultMessage}`">
           <v-list-item-icon>
             <v-icon large>mdi-email</v-icon>
