@@ -12,13 +12,13 @@
     "deploy": "npm run generate && scp -r -i ~/.ssh/byu_domains dist/* jtullisc@brokenaccord.com:~/public_html"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "nuxt": "^2.14.12"
+    "axios": "^0.24.0",
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.14.12",
+    "@nuxt/types": "^2.15.8",
     "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/vuetify": "^1.11.3",
+    "@nuxtjs/vuetify": "^1.12.1",
     "static": "^2.0.0"
   }
 }
